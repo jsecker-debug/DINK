@@ -237,11 +237,11 @@ const SignUp = () => {
       
       if (authError) throw authError;
 
-      // Create user profile record
+      // Create or update user profile record
       if (authData.user) {
         const { error: profileError } = await supabase
           .from('user_profiles')
-          .insert({
+          .upsert({
             id: authData.user.id,
             first_name: formData.firstName,
             last_name: formData.lastName,
@@ -253,6 +253,8 @@ const SignUp = () => {
             wins: 0,
             losses: 0,
             is_active: true
+          }, {
+            onConflict: 'id'
           });
 
         if (profileError) {

@@ -200,12 +200,31 @@ const createInviteEmailTemplate = (data: InviteEmailRequest): string => {
 };
 
 Deno.serve(async (req: Request) => {
+  // Handle CORS preflight requests
+  if (req.method === 'OPTIONS') {
+    return new Response(null, {
+      status: 200,
+      headers: {
+        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Methods': 'POST, OPTIONS',
+        'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type',
+        'Access-Control-Max-Age': '86400',
+      },
+    });
+  }
+
+  const corsHeaders = {
+    'Access-Control-Allow-Origin': '*',
+    'Access-Control-Allow-Methods': 'POST, OPTIONS',
+    'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type',
+  };
+
   if (req.method !== 'POST') {
     return new Response(
       JSON.stringify({ error: 'Method not allowed' }),
       { 
         status: 405, 
-        headers: { 'Content-Type': 'application/json' } 
+        headers: { 'Content-Type': 'application/json', ...corsHeaders } 
       }
     );
   }
@@ -220,7 +239,7 @@ Deno.serve(async (req: Request) => {
         JSON.stringify({ error: 'Missing required fields' }),
         { 
           status: 400, 
-          headers: { 'Content-Type': 'application/json' } 
+          headers: { 'Content-Type': 'application/json', ...corsHeaders } 
         }
       );
     }
@@ -228,7 +247,7 @@ Deno.serve(async (req: Request) => {
     const emailTemplate = createInviteEmailTemplate(requestData);
     
     const result = await resend.emails.send({
-      from: 'Pickleball Squad <invites@pickleballsquad.com>',
+      from: 'Pickleball Squad <invites@drinkgroni.com>',
       to: [recipientEmail],
       subject: `You're invited to join ${clubName}!`,
       html: emailTemplate,
@@ -240,7 +259,7 @@ Deno.serve(async (req: Request) => {
         JSON.stringify({ error: result.error.message }),
         { 
           status: 500, 
-          headers: { 'Content-Type': 'application/json' } 
+          headers: { 'Content-Type': 'application/json', ...corsHeaders } 
         }
       );
     }
@@ -250,7 +269,7 @@ Deno.serve(async (req: Request) => {
         success: true, 
         messageId: result.data?.id 
       }),
-      { headers: { 'Content-Type': 'application/json' } }
+      { headers: { 'Content-Type': 'application/json', ...corsHeaders } }
     );
 
   } catch (error) {
@@ -261,7 +280,7 @@ Deno.serve(async (req: Request) => {
       }),
       { 
         status: 500, 
-        headers: { 'Content-Type': 'application/json' } 
+        headers: { 'Content-Type': 'application/json', ...corsHeaders } 
       }
     );
   }
