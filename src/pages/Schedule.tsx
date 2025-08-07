@@ -16,7 +16,8 @@ import {
   Clock,
   ChevronRight,
   Filter,
-  Search
+  Search,
+  Banknote
 } from "lucide-react";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { toast } from "sonner";
@@ -32,6 +33,9 @@ import { useRegisterForSession } from "@/hooks/useSessionRegistration";
 const Schedule = () => {
   const [date, setDate] = useState<Date>();
   const [venue, setVenue] = useState<string>();
+  const [cost, setCost] = useState<string>("");
+  const [startTime, setStartTime] = useState<string>("18:00");
+  const [endTime, setEndTime] = useState<string>("20:00");
   const [maxParticipants, setMaxParticipants] = useState<number>(16);
   const [registrationDeadline, setRegistrationDeadline] = useState<Date>();
   const [isDialogOpen, setIsDialogOpen] = useState(false);
@@ -68,7 +72,7 @@ const Schedule = () => {
   }
 
   const addSession = useMutation({
-    mutationFn: async ({ date, venue, maxParticipants, registrationDeadline }: { date: Date; venue: string; maxParticipants: number; registrationDeadline?: Date }) => {
+    mutationFn: async ({ date, venue, cost, startTime, endTime, maxParticipants, registrationDeadline }: { date: Date; venue: string; cost: number; startTime: string; endTime: string; maxParticipants: number; registrationDeadline?: Date }) => {
       // Capture club ID immediately to prevent race conditions
       const currentClubId = selectedClubId;
       const currentClub = selectedClub;
@@ -90,14 +94,31 @@ const Schedule = () => {
       console.log('Selected club:', currentClub);
       console.log('Session IDs in scope:', sessionIds);
       
+      // Combine date with start and end times
+      const startDateTime = new Date(date);
+      const [startHour, startMinute] = startTime.split(':').map(Number);
+      startDateTime.setHours(startHour, startMinute, 0, 0);
+      
+      const endDateTime = new Date(date);
+      const [endHour, endMinute] = endTime.split(':').map(Number);
+      endDateTime.setHours(endHour, endMinute, 0, 0);
+      
+      // If end time is before start time, assume it's the next day
+      if (endDateTime <= startDateTime) {
+        endDateTime.setDate(endDateTime.getDate() + 1);
+      }
+      
       // Create the session data object
       const sessionData = { 
-        Date: date.toISOString(),
+        Date: startDateTime.toISOString(),
         Venue: venue,
         Status: 'Upcoming' as const,
         club_id: currentClubId,
         max_participants: maxParticipants,
-        registration_deadline: registrationDeadline?.toISOString()
+        registration_deadline: registrationDeadline?.toISOString(),
+        fee_per_player: cost,
+        start_time: startDateTime.toISOString(),
+        end_time: endDateTime.toISOString()
       };
       
       console.log('Session data being inserted:', sessionData);
@@ -114,15 +135,67 @@ const Schedule = () => {
         throw error;
       }
       
+      // Update any existing activity record with the current user as the actor
+      const createdSession = data?.[0];
+      if (createdSession && currentClubId && user?.id) {
+        // Wait a bit for the trigger to potentially create the activity
+        await new Promise(resolve => setTimeout(resolve, 100));
+        
+        // Check if trigger already created an activity
+        const { data: existingActivity } = await supabase
+          .from('activities')
+          .select('id')
+          .eq('type', 'session_created')
+          .eq('target_type', 'session')
+          .eq('data->>session_id', createdSession.id.toString())
+          .single();
+        
+        if (existingActivity) {
+          // Update the existing activity with the real actor
+          const { error: updateError } = await supabase
+            .from('activities')
+            .update({ actor_id: user.id })
+            .eq('id', existingActivity.id);
+          
+          if (updateError) {
+            console.error('Error updating activity record:', updateError);
+          }
+        } else {
+          // Create new activity if none exists
+          const { error: activityError } = await supabase
+            .from('activities')
+            .insert({
+              club_id: currentClubId,
+              type: 'session_created',
+              actor_id: user.id,
+              target_id: createdSession.id.toString(),
+              target_type: 'session',
+              data: {
+                session_id: createdSession.id,
+                session_date: createdSession.Date,
+                venue: createdSession.Venue
+              }
+            });
+          
+          if (activityError) {
+            console.error('Error creating activity record:', activityError);
+          }
+        }
+      }
+      
       return data;
     },
     onSuccess: (data) => {
       const createdSession = data?.[0];
       const clubIdForCache = createdSession?.club_id || selectedClubId;
       queryClient.invalidateQueries({ queryKey: ["sessions", clubIdForCache] });
+      queryClient.invalidateQueries({ queryKey: ["club-activity", clubIdForCache] });
       setIsDialogOpen(false);
       setDate(undefined);
       setVenue(undefined);
+      setCost("");
+      setStartTime("18:00");
+      setEndTime("20:00");
       setMaxParticipants(16);
       setRegistrationDeadline(undefined);
       toast.success("Session created successfully!");
@@ -139,9 +212,18 @@ const Schedule = () => {
       toast.error("Please select a club first");
       return;
     }
-    if (date && venue && venue !== 'no-location' && venue !== 'no-club') {
-      addSession.mutate({ date, venue, maxParticipants, registrationDeadline });
+    if (!date || !venue || venue === 'no-location' || venue === 'no-club' || cost === "") {
+      toast.error("Please fill in all required fields");
+      return;
     }
+    
+    const costNumber = parseFloat(cost);
+    if (isNaN(costNumber) || costNumber < 0) {
+      toast.error("Please enter a valid cost (minimum £0.00)");
+      return;
+    }
+    
+    addSession.mutate({ date, venue, cost: costNumber, startTime, endTime, maxParticipants, registrationDeadline });
   };
 
   const getFilteredSessions = (): Session[] => {
@@ -265,6 +347,12 @@ const Schedule = () => {
                     </span>
                   )}
                 </div>
+                {session.fee_per_player && session.fee_per_player > 0 && (
+                  <div className="flex items-center gap-1">
+                    <Banknote className="h-4 w-4" />
+                    <span>£{session.fee_per_player.toFixed(2)}</span>
+                  </div>
+                )}
               </div>
               
               <div className="mt-2 text-xs text-muted-foreground">
@@ -368,6 +456,41 @@ const Schedule = () => {
                   </SelectContent>
                 </Select>
               </div>
+              <div className="grid grid-cols-2 gap-4">
+                <div>
+                  <label className="text-sm font-medium text-card-foreground">Start Time</label>
+                  <Input
+                    type="time"
+                    value={startTime}
+                    onChange={(e) => setStartTime(e.target.value)}
+                    className="bg-background border-input"
+                  />
+                </div>
+                <div>
+                  <label className="text-sm font-medium text-card-foreground">End Time</label>
+                  <Input
+                    type="time"
+                    value={endTime}
+                    onChange={(e) => setEndTime(e.target.value)}
+                    className="bg-background border-input"
+                  />
+                </div>
+              </div>
+              <div>
+                <label className="text-sm font-medium text-card-foreground">Cost per Player (£)</label>
+                <Input
+                  type="number"
+                  step="0.01"
+                  min="0"
+                  placeholder="0.00"
+                  value={cost}
+                  onChange={(e) => setCost(e.target.value)}
+                  className="bg-background border-input"
+                />
+                <p className="text-xs text-muted-foreground mt-1">
+                  Fee that each player will pay for this session
+                </p>
+              </div>
               <div>
                 <label className="text-sm font-medium text-card-foreground">Max Participants</label>
                 <Input
@@ -415,7 +538,7 @@ const Schedule = () => {
                 <Button type="button" variant="outline" onClick={() => setIsDialogOpen(false)}>
                   Cancel
                 </Button>
-                <Button type="submit" disabled={!date || !venue || venue === 'no-location' || venue === 'no-club' || addSession.isPending}>
+                <Button type="submit" disabled={!date || !venue || venue === 'no-location' || venue === 'no-club' || cost === "" || addSession.isPending}>
                   {addSession.isPending ? 'Creating...' : 'Create Session'}
                 </Button>
               </div>

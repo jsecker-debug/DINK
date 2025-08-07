@@ -117,6 +117,8 @@ const getActivityIcon = (type: string) => {
       return <Calendar className="h-5 w-5 text-chart-1" />;
     case "session_completed":
       return <Clock className="h-5 w-5 text-chart-2" />;
+    case "session_cancelled":
+      return <Calendar className="h-5 w-5 text-red-500" />;
     case "member_joined":
       return <Users className="h-5 w-5 text-chart-3" />;
     case "tournament_result":
@@ -131,9 +133,11 @@ const getActivityIcon = (type: string) => {
 const getActivityBadge = (type: string) => {
   switch (type) {
     case "session_created":
-      return <Badge variant="secondary" className="bg-chart-1/10 text-chart-1">New Session</Badge>;
+      return <Badge variant="secondary" className="bg-chart-1/10 text-chart-1">Available</Badge>;
     case "session_completed":
       return <Badge variant="secondary" className="bg-chart-2/10 text-chart-2">Completed</Badge>;
+    case "session_cancelled":
+      return <Badge variant="secondary" className="bg-red-500/10 text-red-500">Cancelled</Badge>;
     case "member_joined":
       return <Badge variant="secondary" className="bg-chart-3/10 text-chart-3">New Member</Badge>;
     case "tournament_result":
@@ -177,12 +181,19 @@ const Feed = () => {
       
       switch (activity.type) {
         case "session_created":
-          title = "New Session Scheduled";
-          content = `A new pickleball session has been scheduled${activity.target_session ? ` at ${activity.target_session.Venue}` : ""}.`;
+          title = "Session Available";
+          const sessionVenue = activity.target_session?.Venue || activity.data?.venue;
+          content = `Join the upcoming session${sessionVenue ? ` at ${sessionVenue}` : ""}.`;
           break;
         case "session_completed":
           title = "Session Completed";
           content = `Session completed${activity.target_session ? ` at ${activity.target_session.Venue}` : ""}.`;
+          break;
+        case "session_cancelled":
+          title = "Session Cancelled";
+          const sessionData = activity.data;
+          const registeredCount = sessionData?.registered_count || 0;
+          content = `Session scheduled for ${sessionData?.session_venue ? ` ${sessionData.session_venue}` : ''} has been cancelled.${registeredCount > 0 ? ` ${registeredCount} registered players have been notified.` : ''}`;
           break;
         case "member_joined":
           title = "New Member Joined";
@@ -215,17 +226,22 @@ const Feed = () => {
         title,
         content,
         author: {
-          name: activity.actor_profile ? `${activity.actor_profile.first_name} ${activity.actor_profile.last_name}` : "Club Admin",
+          name: activity.actor_profile ? `${activity.actor_profile.first_name} ${activity.actor_profile.last_name}` : "Session Organizer",
           avatar: activity.actor_profile?.avatar_url || "",
-          initials: activity.actor_profile ? `${activity.actor_profile.first_name?.[0] || ""}${activity.actor_profile.last_name?.[0] || ""}` : "CA"
+          initials: activity.actor_profile ? `${activity.actor_profile.first_name?.[0] || ""}${activity.actor_profile.last_name?.[0] || ""}` : "SO"
         },
         timestamp: new Date(activity.created_at),
         likes: Math.floor(Math.random() * 20), // Mock likes for now
         comments: Math.floor(Math.random() * 10), // Mock comments for now
         metadata: {
+          // Handle session metadata from either target_session (join) or data (direct)
           ...(activity.target_session && {
             date: activity.target_session.Date,
             venue: activity.target_session.Venue
+          }),
+          ...(activity.type === 'session_created' && activity.data && !activity.target_session && {
+            date: activity.data.session_date,
+            venue: activity.data.venue
           }),
           ...(activity.target_member && {
             level: activity.target_member.skill_level
