@@ -1,0 +1,1001 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		033192C2F1D17E5A840278F7 /* ClubDiscoveryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296F3050C3AB281EC48C857E /* ClubDiscoveryView.swift */; };
+		033CB92E57456198ED873A56 /* EmptyStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D6804207C4D3FC5CADA85D /* EmptyStateView.swift */; };
+		04EEFA6308E3AC59B48711C7 /* MembersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB33C05F5963CF0D3D159603 /* MembersView.swift */; };
+		0A5A7F44463979E38E767145 /* ScheduleGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F303AD1E94555B73EE67350 /* ScheduleGenerator.swift */; };
+		0B75CFCD0F29880835A4051D /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D4C0F8AF149D0EC279F0BF1 /* UserProfile.swift */; };
+		0F980ED6AE345A2AA2602D1F /* SessionRegistration.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED71EA3CA8E0381C8F66AD04 /* SessionRegistration.swift */; };
+		10987AA929524DA968DCBA85 /* Activity.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA62D48D6C32A51B67B7CB5 /* Activity.swift */; };
+		13D184E3ADD4DB92ED5643AC /* SessionDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FA5FB7510C67C8CF47B1970 /* SessionDetailView.swift */; };
+		17C21CD3D0FB90F41C0ADC56 /* SessionStatusUpdater.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72C416D56F784675216A9A2E /* SessionStatusUpdater.swift */; };
+		18BC4F10A6B8A0B3E9B78B8A /* PlayerSwapService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B04B67CB5A49A495ADF53C /* PlayerSwapService.swift */; };
+		18D3DB38DBF7D86F6CB1DEF3 /* SignUpStep2View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D815F425B3AF7AC36A14A00 /* SignUpStep2View.swift */; };
+		1F66D3439550C2A7A4DE3673 /* ClubMembership.swift in Sources */ = {isa = PBXBuildFile; fileRef = 391BB1B8E22002826B6D5823 /* ClubMembership.swift */; };
+		2328E0CEB7370638766CF2EA /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DDB9F871C1B5A61974F74E2 /* AuthService.swift */; };
+		27A1372273D655D099564BF9 /* Color+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A8AE4BC62E6AF32E047CE7 /* Color+Extensions.swift */; };
+		284DC9A2577DA897F62A3422 /* ClubSelectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B36AFA297E9480127581E95 /* ClubSelectorView.swift */; };
+		300B8C7DF8C27479A164A9D8 /* ScheduleGeneratorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27FF2A2FC3BA0D85CCC5500D /* ScheduleGeneratorTests.swift */; };
+		344DDA0A975BC82640DF8189 /* MembersContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE508A59372675689EF5E5FD /* MembersContainerView.swift */; };
+		36E0F7BC1D7C6621828C6974 /* ToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0486583BEDBCC9BD7E09D5B0 /* ToastView.swift */; };
+		38015E6A8762A7A258DB597D /* PaymentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F94799805A5AFBF222E5EFA4 /* PaymentsView.swift */; };
+		38C9F5722ADDAAA732FA71DB /* CreateSessionSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A6304E26C3E1C1839DF9326 /* CreateSessionSheet.swift */; };
+		39BDADA130B9BAD20414FE96 /* SessionRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA9505DD37934CD5E8651004 /* SessionRepository.swift */; };
+		3E9BB18FEFDEDE66BD7A9F06 /* RestingPlayersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A43C7F8C16CEFD6F8B160E8 /* RestingPlayersView.swift */; };
+		3F57EFC6DB990B0A7A3CDDED /* RotationRester.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A386CBABBB2A5CAFA824FB0 /* RotationRester.swift */; };
+		425A85BACCFCC780536507F4 /* AvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65113864FD0EC7F1C756D658 /* AvatarView.swift */; };
+		425F10CA5FBA007F28AC89B2 /* EditProfileSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35332DF873C69BF5DCA9B6CF /* EditProfileSheet.swift */; };
+		427A330C7727C5612A47F903 /* MemberCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A853E679A449344449FE8CDA /* MemberCardView.swift */; };
+		49F3C050B2B89413C5C7AA07 /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1402105F5D0708EBA2F2549C /* SearchBarView.swift */; };
+		4A9215A455CB855B398A44F4 /* AuthGateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6150B51FC6240941B9B8B123 /* AuthGateView.swift */; };
+		50012D9300772BC7AC2E7D3C /* InviteMemberSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD01F4CB9B950DC03B116F44 /* InviteMemberSheet.swift */; };
+		5133371E002AE2A2D7D0F4BA /* CourtDisplayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C22F5A011AAF48C8E3006E3B /* CourtDisplayView.swift */; };
+		56F5C30BC38C05EFF23AA48D /* StatCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48210E67CBBD47C43EC8604 /* StatCardView.swift */; };
+		591F30D0BC14251A2357B364 /* RotationRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582110AC8D88DF01BED3F32D /* RotationRepository.swift */; };
+		5F74574DFD8ACDA468B68AD0 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E36C73B398704BD47D81517 /* SignInView.swift */; };
+		6202CD05F4D9DB67DFB5616F /* RankingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B8A666B0831DC25F2BA46E /* RankingsView.swift */; };
+		65773D46AECA000F6349064E /* ClubService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F1704727809038BB2A68C7 /* ClubService.swift */; };
+		68601D15AB414D2F7509A347 /* ActivityRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7510C2A2456BA644143B849A /* ActivityRepository.swift */; };
+		68F03AC39E1C9F5537DD498B /* PickleHubApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A0D13660E81FA19FCFD6B54 /* PickleHubApp.swift */; };
+		697F049A7515CCA618CF0DE5 /* CourtDisplayTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C13840F1795B74B8B4C28D1 /* CourtDisplayTypes.swift */; };
+		768EEE09C81CFB6934833F06 /* Club.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4F722817607F51FF218590 /* Club.swift */; };
+		78F6D3D7400262D4A9D82032 /* GameScoreRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FF332A2D7510D86F1C5B88 /* GameScoreRepository.swift */; };
+		7DA0C68456B652D93B2B1A16 /* Participant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D55824AE1F50396C18D5E0 /* Participant.swift */; };
+		7FEA8A1657481B13D5BA7F44 /* MemberRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607F70BFF5BBB699B4EE370C /* MemberRepository.swift */; };
+		83368676F379FFEAA6503C47 /* SupabaseClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68671FBBB4FCB3C96F80287E /* SupabaseClient.swift */; };
+		837A15142E6942BF6C7750DE /* Glicko2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82939AB024AFC6F0BC8F1560 /* Glicko2.swift */; };
+		87986D66FF17F835389A9367 /* TemporaryParticipantSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AE2E4430C4C44944CD7D952 /* TemporaryParticipantSheet.swift */; };
+		8D667EA3076E56D6B35CA1D8 /* SupabaseConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0AE9F682EF03E1A5A398F64 /* SupabaseConfig.swift */; };
+		9593B1249519461DE0FE0C02 /* SignUpStep1View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DEC7DF6262E0CB19D9D284E /* SignUpStep1View.swift */; };
+		95FF3B29F3F8102AD68846BF /* TeamDisplayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4354186081C4AFF5E9EB8FE9 /* TeamDisplayView.swift */; };
+		970F71AFE977E3D86DF724D1 /* Rotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D773E7DE2B7E47EFF780AD52 /* Rotation.swift */; };
+		98289650B9E7303AF593FCE6 /* FeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81083FF6FA7DF9771E4A30D2 /* FeedView.swift */; };
+		995FEFA630367A60B13ABD8A /* EditSessionSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 619D0587473501F7153A81E2 /* EditSessionSheet.swift */; };
+		A456852EC3F559D59B5311C9 /* RegistrationRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C7CC4566DFA94F8E8A17FC /* RegistrationRepository.swift */; };
+		ACC19321641A6F0CC81DB826 /* LiquidGlassModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A8197045641DC2F64A78691 /* LiquidGlassModifier.swift */; };
+		ADF8F71CF0C084F2A580125D /* NavigationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185E7CF0E3B77D535120C890 /* NavigationRouter.swift */; };
+		AE7352E92343937E9C16EC79 /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 594D6E159C36D0F8A7DA6483 /* DashboardView.swift */; };
+		B0947D8A13DF44C2662DBADC /* ScheduleGeneratorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D0F66988CE476A1B1376C8 /* ScheduleGeneratorView.swift */; };
+		B2074B2237E2C9133CD0F186 /* BadgeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B3A7245F7D399BD9799D00 /* BadgeView.swift */; };
+		B83BF1C10AEF14032BB63BE1 /* FeedItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1C7CCB254E971F629DE854 /* FeedItemView.swift */; };
+		B8A7C12673DEF681A645D219 /* SessionPDFExportButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F46E6A1B2BAE4F91F918ECC /* SessionPDFExportButton.swift */; };
+		BA4B9931773B20FEC81521FF /* GameResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 571ECA403091131B41BE46EB /* GameResult.swift */; };
+		BA70D5EFE371509AC212AB6F /* Glicko2Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 234343F33F5E72887D21966D /* Glicko2Tests.swift */; };
+		BB42A9AA7096DCE4C8F8621E /* PaymentRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 246417684B95A5B591BF478A /* PaymentRepository.swift */; };
+		BD8F67EC2E28277E6F107799 /* Supabase in Frameworks */ = {isa = PBXBuildFile; productRef = D3E70A4731C98BED722F69A9 /* Supabase */; };
+		BE7D0D488767BCED3909F6BC /* PaymentStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = E790D9350579A9A2F1A247A0 /* PaymentStatus.swift */; };
+		BF441DC63A866CFB1B043DBB /* CourtCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D82577969738C2094C5DE89 /* CourtCardView.swift */; };
+		C3694E6E3A05B44A7C40D6F7 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D97CF7EA94849C04F017AE /* SignUpView.swift */; };
+		C3CA187FE0386CAB84A6493A /* TemporaryParticipantRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C075E8D085CE9DCF40F1A0 /* TemporaryParticipantRepository.swift */; };
+		C647E7760B7D9769E32A8C30 /* ScheduleTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 870BA6754F144D63DB13DF63 /* ScheduleTypes.swift */; };
+		C69ECEC829E3306EF2A5CF92 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7701C71190C012380D50D2E /* OnboardingView.swift */; };
+		C879DDEEF89F3CC23D8E0A12 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327F34FF556480B2AB165F10 /* Session.swift */; };
+		CA9591992A09A78039228A2B /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35BEA239FEB67472ABE17884 /* MainTabView.swift */; };
+		D05B8AE3D58F05565D4E9C48 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D723744B8AE188B0E5C260B0 /* LoadingView.swift */; };
+		D34D178B3F078EA8F5781B34 /* RankingRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA7E3909038D8A94CDD4C09B /* RankingRowView.swift */; };
+		D4B8A225C26F8ECBCC2DD16A /* PDFExportService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CC11D8595B47C070FD2B0F1 /* PDFExportService.swift */; };
+		DB3787DEFFADCB9F1FFE837D /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0167DB6BFB9D4273EF04A57 /* ProfileView.swift */; };
+		DC59131013BCD0EB304FB766 /* PickleHubTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68114F24AD9B0C46870C4B43 /* PickleHubTests.swift */; };
+		DCA831D23FB79333D93A0E8E /* PlayerSwapServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC30B3C0D9D21B1CC7F9D22D /* PlayerSwapServiceTests.swift */; };
+		DE6C5130FA02FFF11A6C3E17 /* GameScoreInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025CAB92D3FA4E364754C6C3 /* GameScoreInputView.swift */; };
+		E6CDB795D966155639367D90 /* CreateClubView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BEDC43BBD375D608317C485 /* CreateClubView.swift */; };
+		E83C9C3747FA0B7DF01E25CE /* TemporaryParticipant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582C685C277E845BFDED0E60 /* TemporaryParticipant.swift */; };
+		E9B16E0CA01DDAEE96A1B87D /* SessionPDFView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC39ACF55239C0C7BFB9736 /* SessionPDFView.swift */; };
+		ECC713D827A18B84E380563B /* SessionsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B58BBC0B1706F40A1D041F /* SessionsListView.swift */; };
+		ED08C2480696FAFC542FD23D /* CourtAssignment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B8AE0DE8B3135F7F734D54B /* CourtAssignment.swift */; };
+		EF3793577DA811D8C925BF72 /* InvitationRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1478B902A3BB6D41C49444B5 /* InvitationRepository.swift */; };
+		EF5A16541BECE01BF4E254F4 /* CreatePostSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8CE9A0C388524245BC650B7 /* CreatePostSheet.swift */; };
+		F2A011577ABC7039604FDE7F /* ClubInvitation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB2492C4260839C10D15683 /* ClubInvitation.swift */; };
+		F7EAD34A0DA6E5CA6F220A4C /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22DEE3D62B59B3F009621588 /* Date+Extensions.swift */; };
+		F9F480474899642D84B4E8CF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 312AFF093E7FD75CF923DF52 /* ContentView.swift */; };
+		FFEA7B8B175347959C7BAE93 /* ToastManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD736040437564486965A7D7 /* ToastManager.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		9E3447006D18C202BAAE3CDC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 458103AB52133CD6F07198B0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 72007752958D49B8B9E92DE3;
+			remoteInfo = PickleHub;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		025CAB92D3FA4E364754C6C3 /* GameScoreInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScoreInputView.swift; sourceTree = "<group>"; };
+		03D0F66988CE476A1B1376C8 /* ScheduleGeneratorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleGeneratorView.swift; sourceTree = "<group>"; };
+		0486583BEDBCC9BD7E09D5B0 /* ToastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastView.swift; sourceTree = "<group>"; };
+		04B8A666B0831DC25F2BA46E /* RankingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingsView.swift; sourceTree = "<group>"; };
+		0508E32193CC671041AA1C7B /* PickleHubTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = PickleHubTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		0D82577969738C2094C5DE89 /* CourtCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourtCardView.swift; sourceTree = "<group>"; };
+		0DEC7DF6262E0CB19D9D284E /* SignUpStep1View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpStep1View.swift; sourceTree = "<group>"; };
+		10F1704727809038BB2A68C7 /* ClubService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClubService.swift; sourceTree = "<group>"; };
+		1402105F5D0708EBA2F2549C /* SearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
+		1478B902A3BB6D41C49444B5 /* InvitationRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvitationRepository.swift; sourceTree = "<group>"; };
+		185E7CF0E3B77D535120C890 /* NavigationRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationRouter.swift; sourceTree = "<group>"; };
+		1CC11D8595B47C070FD2B0F1 /* PDFExportService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFExportService.swift; sourceTree = "<group>"; };
+		1D4C0F8AF149D0EC279F0BF1 /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
+		1F303AD1E94555B73EE67350 /* ScheduleGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleGenerator.swift; sourceTree = "<group>"; };
+		20D55824AE1F50396C18D5E0 /* Participant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Participant.swift; sourceTree = "<group>"; };
+		22DEE3D62B59B3F009621588 /* Date+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
+		234343F33F5E72887D21966D /* Glicko2Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Glicko2Tests.swift; sourceTree = "<group>"; };
+		246417684B95A5B591BF478A /* PaymentRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentRepository.swift; sourceTree = "<group>"; };
+		27FF2A2FC3BA0D85CCC5500D /* ScheduleGeneratorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleGeneratorTests.swift; sourceTree = "<group>"; };
+		296F3050C3AB281EC48C857E /* ClubDiscoveryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClubDiscoveryView.swift; sourceTree = "<group>"; };
+		2BB2492C4260839C10D15683 /* ClubInvitation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClubInvitation.swift; sourceTree = "<group>"; };
+		312AFF093E7FD75CF923DF52 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		327F34FF556480B2AB165F10 /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
+		35332DF873C69BF5DCA9B6CF /* EditProfileSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileSheet.swift; sourceTree = "<group>"; };
+		35BEA239FEB67472ABE17884 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
+		38D6804207C4D3FC5CADA85D /* EmptyStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyStateView.swift; sourceTree = "<group>"; };
+		391BB1B8E22002826B6D5823 /* ClubMembership.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClubMembership.swift; sourceTree = "<group>"; };
+		4354186081C4AFF5E9EB8FE9 /* TeamDisplayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamDisplayView.swift; sourceTree = "<group>"; };
+		4A0D13660E81FA19FCFD6B54 /* PickleHubApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickleHubApp.swift; sourceTree = "<group>"; };
+		4A43C7F8C16CEFD6F8B160E8 /* RestingPlayersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestingPlayersView.swift; sourceTree = "<group>"; };
+		4B8AE0DE8B3135F7F734D54B /* CourtAssignment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourtAssignment.swift; sourceTree = "<group>"; };
+		4D815F425B3AF7AC36A14A00 /* SignUpStep2View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpStep2View.swift; sourceTree = "<group>"; };
+		571ECA403091131B41BE46EB /* GameResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameResult.swift; sourceTree = "<group>"; };
+		582110AC8D88DF01BED3F32D /* RotationRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RotationRepository.swift; sourceTree = "<group>"; };
+		582C685C277E845BFDED0E60 /* TemporaryParticipant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemporaryParticipant.swift; sourceTree = "<group>"; };
+		594D6E159C36D0F8A7DA6483 /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
+		5B36AFA297E9480127581E95 /* ClubSelectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClubSelectorView.swift; sourceTree = "<group>"; };
+		5DDB9F871C1B5A61974F74E2 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		5E36C73B398704BD47D81517 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
+		600EBD53B65EF6C310D18120 /* PickleHub.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = PickleHub.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		607F70BFF5BBB699B4EE370C /* MemberRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberRepository.swift; sourceTree = "<group>"; };
+		6150B51FC6240941B9B8B123 /* AuthGateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthGateView.swift; sourceTree = "<group>"; };
+		619D0587473501F7153A81E2 /* EditSessionSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditSessionSheet.swift; sourceTree = "<group>"; };
+		65113864FD0EC7F1C756D658 /* AvatarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarView.swift; sourceTree = "<group>"; };
+		68114F24AD9B0C46870C4B43 /* PickleHubTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickleHubTests.swift; sourceTree = "<group>"; };
+		68671FBBB4FCB3C96F80287E /* SupabaseClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupabaseClient.swift; sourceTree = "<group>"; };
+		6A386CBABBB2A5CAFA824FB0 /* RotationRester.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RotationRester.swift; sourceTree = "<group>"; };
+		6A8197045641DC2F64A78691 /* LiquidGlassModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiquidGlassModifier.swift; sourceTree = "<group>"; };
+		6AE2E4430C4C44944CD7D952 /* TemporaryParticipantSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemporaryParticipantSheet.swift; sourceTree = "<group>"; };
+		72C416D56F784675216A9A2E /* SessionStatusUpdater.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionStatusUpdater.swift; sourceTree = "<group>"; };
+		73D97CF7EA94849C04F017AE /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
+		7510C2A2456BA644143B849A /* ActivityRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityRepository.swift; sourceTree = "<group>"; };
+		7A6304E26C3E1C1839DF9326 /* CreateSessionSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateSessionSheet.swift; sourceTree = "<group>"; };
+		7BEDC43BBD375D608317C485 /* CreateClubView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateClubView.swift; sourceTree = "<group>"; };
+		81083FF6FA7DF9771E4A30D2 /* FeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedView.swift; sourceTree = "<group>"; };
+		82939AB024AFC6F0BC8F1560 /* Glicko2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Glicko2.swift; sourceTree = "<group>"; };
+		870BA6754F144D63DB13DF63 /* ScheduleTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleTypes.swift; sourceTree = "<group>"; };
+		8AC39ACF55239C0C7BFB9736 /* SessionPDFView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionPDFView.swift; sourceTree = "<group>"; };
+		8F46E6A1B2BAE4F91F918ECC /* SessionPDFExportButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionPDFExportButton.swift; sourceTree = "<group>"; };
+		90C7CC4566DFA94F8E8A17FC /* RegistrationRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationRepository.swift; sourceTree = "<group>"; };
+		91B04B67CB5A49A495ADF53C /* PlayerSwapService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerSwapService.swift; sourceTree = "<group>"; };
+		9C13840F1795B74B8B4C28D1 /* CourtDisplayTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourtDisplayTypes.swift; sourceTree = "<group>"; };
+		9FA5FB7510C67C8CF47B1970 /* SessionDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionDetailView.swift; sourceTree = "<group>"; };
+		A4B58BBC0B1706F40A1D041F /* SessionsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionsListView.swift; sourceTree = "<group>"; };
+		A853E679A449344449FE8CDA /* MemberCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberCardView.swift; sourceTree = "<group>"; };
+		BA9505DD37934CD5E8651004 /* SessionRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionRepository.swift; sourceTree = "<group>"; };
+		BD4F722817607F51FF218590 /* Club.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Club.swift; sourceTree = "<group>"; };
+		BE1C7CCB254E971F629DE854 /* FeedItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedItemView.swift; sourceTree = "<group>"; };
+		BE508A59372675689EF5E5FD /* MembersContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MembersContainerView.swift; sourceTree = "<group>"; };
+		C0167DB6BFB9D4273EF04A57 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		C22F5A011AAF48C8E3006E3B /* CourtDisplayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourtDisplayView.swift; sourceTree = "<group>"; };
+		C48210E67CBBD47C43EC8604 /* StatCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatCardView.swift; sourceTree = "<group>"; };
+		C7701C71190C012380D50D2E /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		C8CE9A0C388524245BC650B7 /* CreatePostSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePostSheet.swift; sourceTree = "<group>"; };
+		CA7E3909038D8A94CDD4C09B /* RankingRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingRowView.swift; sourceTree = "<group>"; };
+		CC30B3C0D9D21B1CC7F9D22D /* PlayerSwapServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerSwapServiceTests.swift; sourceTree = "<group>"; };
+		D723744B8AE188B0E5C260B0 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		D773E7DE2B7E47EFF780AD52 /* Rotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rotation.swift; sourceTree = "<group>"; };
+		D8A8AE4BC62E6AF32E047CE7 /* Color+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extensions.swift"; sourceTree = "<group>"; };
+		DD01F4CB9B950DC03B116F44 /* InviteMemberSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InviteMemberSheet.swift; sourceTree = "<group>"; };
+		E0AE9F682EF03E1A5A398F64 /* SupabaseConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupabaseConfig.swift; sourceTree = "<group>"; };
+		E59B22FFD3B0607F2A632328 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		E790D9350579A9A2F1A247A0 /* PaymentStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentStatus.swift; sourceTree = "<group>"; };
+		E7B3A7245F7D399BD9799D00 /* BadgeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeView.swift; sourceTree = "<group>"; };
+		E9C075E8D085CE9DCF40F1A0 /* TemporaryParticipantRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemporaryParticipantRepository.swift; sourceTree = "<group>"; };
+		EB33C05F5963CF0D3D159603 /* MembersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MembersView.swift; sourceTree = "<group>"; };
+		ED71EA3CA8E0381C8F66AD04 /* SessionRegistration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionRegistration.swift; sourceTree = "<group>"; };
+		F0FF332A2D7510D86F1C5B88 /* GameScoreRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScoreRepository.swift; sourceTree = "<group>"; };
+		F94799805A5AFBF222E5EFA4 /* PaymentsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentsView.swift; sourceTree = "<group>"; };
+		FAA62D48D6C32A51B67B7CB5 /* Activity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Activity.swift; sourceTree = "<group>"; };
+		FD736040437564486965A7D7 /* ToastManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastManager.swift; sourceTree = "<group>"; };
+		FE0ECA0146AF8A4FDCED0965 /* PickleHub.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PickleHub.entitlements; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1C19284FC8189152440AAEAD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BD8F67EC2E28277E6F107799 /* Supabase in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0188AE13EB3ED3A7A03D7DD0 /* Sessions */ = {
+			isa = PBXGroup;
+			children = (
+				7A6304E26C3E1C1839DF9326 /* CreateSessionSheet.swift */,
+				619D0587473501F7153A81E2 /* EditSessionSheet.swift */,
+				9FA5FB7510C67C8CF47B1970 /* SessionDetailView.swift */,
+				8F46E6A1B2BAE4F91F918ECC /* SessionPDFExportButton.swift */,
+				8AC39ACF55239C0C7BFB9736 /* SessionPDFView.swift */,
+				A4B58BBC0B1706F40A1D041F /* SessionsListView.swift */,
+				6AE2E4430C4C44944CD7D952 /* TemporaryParticipantSheet.swift */,
+			);
+			path = Sessions;
+			sourceTree = "<group>";
+		};
+		01CD17FEFB0181C97FF20095 /* Dashboard */ = {
+			isa = PBXGroup;
+			children = (
+				594D6E159C36D0F8A7DA6483 /* DashboardView.swift */,
+			);
+			path = Dashboard;
+			sourceTree = "<group>";
+		};
+		0AF1B31AD79A7C44FA883702 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				5B36AFA297E9480127581E95 /* ClubSelectorView.swift */,
+				6A8197045641DC2F64A78691 /* LiquidGlassModifier.swift */,
+				1CC11D8595B47C070FD2B0F1 /* PDFExportService.swift */,
+				FD736040437564486965A7D7 /* ToastManager.swift */,
+				7068C3B97B6272B60564E860 /* Components */,
+				4972036330055C16C5DC764E /* Extensions */,
+				7A1C70CB922A634EC9AEC0B3 /* Utilities */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		22FE922D1CB99C8B2B46B3B7 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				E59B22FFD3B0607F2A632328 /* Info.plist */,
+				FE0ECA0146AF8A4FDCED0965 /* PickleHub.entitlements */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		3442A64EAB2EBA891C14942F /* Members */ = {
+			isa = PBXGroup;
+			children = (
+				DD01F4CB9B950DC03B116F44 /* InviteMemberSheet.swift */,
+				A853E679A449344449FE8CDA /* MemberCardView.swift */,
+				BE508A59372675689EF5E5FD /* MembersContainerView.swift */,
+				EB33C05F5963CF0D3D159603 /* MembersView.swift */,
+			);
+			path = Members;
+			sourceTree = "<group>";
+		};
+		348C0DB248104AF532947D3A /* Supabase */ = {
+			isa = PBXGroup;
+			children = (
+				68671FBBB4FCB3C96F80287E /* SupabaseClient.swift */,
+				E0AE9F682EF03E1A5A398F64 /* SupabaseConfig.swift */,
+			);
+			path = Supabase;
+			sourceTree = "<group>";
+		};
+		4972036330055C16C5DC764E /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				D8A8AE4BC62E6AF32E047CE7 /* Color+Extensions.swift */,
+				22DEE3D62B59B3F009621588 /* Date+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		4D6932A1460083A10FF2BD4B /* PickleHub */ = {
+			isa = PBXGroup;
+			children = (
+				F81DCA7AF242A71701F03A20 /* Algorithms */,
+				5BDB8D61652ED7A661E644E1 /* App */,
+				CB687101979483890C800FB9 /* Core */,
+				5F3A7224709452800BA5CB51 /* Features */,
+				C35B3B1D8FC928FD9A51FF94 /* Models */,
+				BF852C846759D89B036E475B /* Repositories */,
+				22FE922D1CB99C8B2B46B3B7 /* Resources */,
+				0AF1B31AD79A7C44FA883702 /* Shared */,
+			);
+			path = PickleHub;
+			sourceTree = "<group>";
+		};
+		515551DD97CDCB5D9C1B28B6 /* Rankings */ = {
+			isa = PBXGroup;
+			children = (
+				CA7E3909038D8A94CDD4C09B /* RankingRowView.swift */,
+				04B8A666B0831DC25F2BA46E /* RankingsView.swift */,
+			);
+			path = Rankings;
+			sourceTree = "<group>";
+		};
+		523642337325E7E29E3475D6 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				35332DF873C69BF5DCA9B6CF /* EditProfileSheet.swift */,
+				C0167DB6BFB9D4273EF04A57 /* ProfileView.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		57EE5576BB02119F9A429BBA /* Schedule */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Schedule;
+			sourceTree = "<group>";
+		};
+		5BDB8D61652ED7A661E644E1 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				6150B51FC6240941B9B8B123 /* AuthGateView.swift */,
+				312AFF093E7FD75CF923DF52 /* ContentView.swift */,
+				35BEA239FEB67472ABE17884 /* MainTabView.swift */,
+				185E7CF0E3B77D535120C890 /* NavigationRouter.swift */,
+				4A0D13660E81FA19FCFD6B54 /* PickleHubApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		5F3A7224709452800BA5CB51 /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				DEF828DF0EAAC94FA5BEE510 /* Auth */,
+				767CC0E41DA0AB1E7DB5EB70 /* ClubManagement */,
+				6B3C4FB97098F6A6AE304075 /* Courts */,
+				01CD17FEFB0181C97FF20095 /* Dashboard */,
+				A621381AAAB2166FE6ECD904 /* Feed */,
+				3442A64EAB2EBA891C14942F /* Members */,
+				A387A14D52619068E13D9589 /* Onboarding */,
+				A5E3A99D92693BB37A9015EC /* Payments */,
+				523642337325E7E29E3475D6 /* Profile */,
+				515551DD97CDCB5D9C1B28B6 /* Rankings */,
+				57EE5576BB02119F9A429BBA /* Schedule */,
+				A6184105B2242F326B322DA2 /* Scoring */,
+				0188AE13EB3ED3A7A03D7DD0 /* Sessions */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		6B3C4FB97098F6A6AE304075 /* Courts */ = {
+			isa = PBXGroup;
+			children = (
+				0D82577969738C2094C5DE89 /* CourtCardView.swift */,
+				C22F5A011AAF48C8E3006E3B /* CourtDisplayView.swift */,
+				4A43C7F8C16CEFD6F8B160E8 /* RestingPlayersView.swift */,
+				03D0F66988CE476A1B1376C8 /* ScheduleGeneratorView.swift */,
+				4354186081C4AFF5E9EB8FE9 /* TeamDisplayView.swift */,
+			);
+			path = Courts;
+			sourceTree = "<group>";
+		};
+		7068C3B97B6272B60564E860 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				65113864FD0EC7F1C756D658 /* AvatarView.swift */,
+				E7B3A7245F7D399BD9799D00 /* BadgeView.swift */,
+				38D6804207C4D3FC5CADA85D /* EmptyStateView.swift */,
+				D723744B8AE188B0E5C260B0 /* LoadingView.swift */,
+				1402105F5D0708EBA2F2549C /* SearchBarView.swift */,
+				C48210E67CBBD47C43EC8604 /* StatCardView.swift */,
+				0486583BEDBCC9BD7E09D5B0 /* ToastView.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		767CC0E41DA0AB1E7DB5EB70 /* ClubManagement */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ClubManagement;
+			sourceTree = "<group>";
+		};
+		7A1C70CB922A634EC9AEC0B3 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		82412B3CA899E3A7D933E90C /* Club */ = {
+			isa = PBXGroup;
+			children = (
+				10F1704727809038BB2A68C7 /* ClubService.swift */,
+			);
+			path = Club;
+			sourceTree = "<group>";
+		};
+		A1D263278723350D0C251CBC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				600EBD53B65EF6C310D18120 /* PickleHub.app */,
+				0508E32193CC671041AA1C7B /* PickleHubTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A387A14D52619068E13D9589 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				296F3050C3AB281EC48C857E /* ClubDiscoveryView.swift */,
+				7BEDC43BBD375D608317C485 /* CreateClubView.swift */,
+				C7701C71190C012380D50D2E /* OnboardingView.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		A5E3A99D92693BB37A9015EC /* Payments */ = {
+			isa = PBXGroup;
+			children = (
+				F94799805A5AFBF222E5EFA4 /* PaymentsView.swift */,
+			);
+			path = Payments;
+			sourceTree = "<group>";
+		};
+		A6184105B2242F326B322DA2 /* Scoring */ = {
+			isa = PBXGroup;
+			children = (
+				025CAB92D3FA4E364754C6C3 /* GameScoreInputView.swift */,
+			);
+			path = Scoring;
+			sourceTree = "<group>";
+		};
+		A621381AAAB2166FE6ECD904 /* Feed */ = {
+			isa = PBXGroup;
+			children = (
+				C8CE9A0C388524245BC650B7 /* CreatePostSheet.swift */,
+				BE1C7CCB254E971F629DE854 /* FeedItemView.swift */,
+				81083FF6FA7DF9771E4A30D2 /* FeedView.swift */,
+			);
+			path = Feed;
+			sourceTree = "<group>";
+		};
+		B60CB12D2377D85A3C4CD2E5 = {
+			isa = PBXGroup;
+			children = (
+				4D6932A1460083A10FF2BD4B /* PickleHub */,
+				C3E1D2D010C478BF5119FD2A /* PickleHubTests */,
+				A1D263278723350D0C251CBC /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		BF852C846759D89B036E475B /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				7510C2A2456BA644143B849A /* ActivityRepository.swift */,
+				F0FF332A2D7510D86F1C5B88 /* GameScoreRepository.swift */,
+				1478B902A3BB6D41C49444B5 /* InvitationRepository.swift */,
+				607F70BFF5BBB699B4EE370C /* MemberRepository.swift */,
+				246417684B95A5B591BF478A /* PaymentRepository.swift */,
+				90C7CC4566DFA94F8E8A17FC /* RegistrationRepository.swift */,
+				582110AC8D88DF01BED3F32D /* RotationRepository.swift */,
+				BA9505DD37934CD5E8651004 /* SessionRepository.swift */,
+				E9C075E8D085CE9DCF40F1A0 /* TemporaryParticipantRepository.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		C35B3B1D8FC928FD9A51FF94 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				FAA62D48D6C32A51B67B7CB5 /* Activity.swift */,
+				BD4F722817607F51FF218590 /* Club.swift */,
+				2BB2492C4260839C10D15683 /* ClubInvitation.swift */,
+				391BB1B8E22002826B6D5823 /* ClubMembership.swift */,
+				4B8AE0DE8B3135F7F734D54B /* CourtAssignment.swift */,
+				9C13840F1795B74B8B4C28D1 /* CourtDisplayTypes.swift */,
+				571ECA403091131B41BE46EB /* GameResult.swift */,
+				20D55824AE1F50396C18D5E0 /* Participant.swift */,
+				E790D9350579A9A2F1A247A0 /* PaymentStatus.swift */,
+				D773E7DE2B7E47EFF780AD52 /* Rotation.swift */,
+				6A386CBABBB2A5CAFA824FB0 /* RotationRester.swift */,
+				870BA6754F144D63DB13DF63 /* ScheduleTypes.swift */,
+				327F34FF556480B2AB165F10 /* Session.swift */,
+				ED71EA3CA8E0381C8F66AD04 /* SessionRegistration.swift */,
+				582C685C277E845BFDED0E60 /* TemporaryParticipant.swift */,
+				1D4C0F8AF149D0EC279F0BF1 /* UserProfile.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		C3E1D2D010C478BF5119FD2A /* PickleHubTests */ = {
+			isa = PBXGroup;
+			children = (
+				234343F33F5E72887D21966D /* Glicko2Tests.swift */,
+				68114F24AD9B0C46870C4B43 /* PickleHubTests.swift */,
+				CC30B3C0D9D21B1CC7F9D22D /* PlayerSwapServiceTests.swift */,
+				27FF2A2FC3BA0D85CCC5500D /* ScheduleGeneratorTests.swift */,
+			);
+			path = PickleHubTests;
+			sourceTree = "<group>";
+		};
+		CB687101979483890C800FB9 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				72C416D56F784675216A9A2E /* SessionStatusUpdater.swift */,
+				F390127CD216B220C83B8EF5 /* Auth */,
+				82412B3CA899E3A7D933E90C /* Club */,
+				348C0DB248104AF532947D3A /* Supabase */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		DEF828DF0EAAC94FA5BEE510 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				5E36C73B398704BD47D81517 /* SignInView.swift */,
+				0DEC7DF6262E0CB19D9D284E /* SignUpStep1View.swift */,
+				4D815F425B3AF7AC36A14A00 /* SignUpStep2View.swift */,
+				73D97CF7EA94849C04F017AE /* SignUpView.swift */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		F390127CD216B220C83B8EF5 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				5DDB9F871C1B5A61974F74E2 /* AuthService.swift */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		F81DCA7AF242A71701F03A20 /* Algorithms */ = {
+			isa = PBXGroup;
+			children = (
+				82939AB024AFC6F0BC8F1560 /* Glicko2.swift */,
+				91B04B67CB5A49A495ADF53C /* PlayerSwapService.swift */,
+				1F303AD1E94555B73EE67350 /* ScheduleGenerator.swift */,
+			);
+			path = Algorithms;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		72007752958D49B8B9E92DE3 /* PickleHub */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8D7D5BB89B736AFC0FAF8020 /* Build configuration list for PBXNativeTarget "PickleHub" */;
+			buildPhases = (
+				AEF4F5A1A9C76A9A4118C32D /* Sources */,
+				1C19284FC8189152440AAEAD /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PickleHub;
+			packageProductDependencies = (
+				D3E70A4731C98BED722F69A9 /* Supabase */,
+			);
+			productName = PickleHub;
+			productReference = 600EBD53B65EF6C310D18120 /* PickleHub.app */;
+			productType = "com.apple.product-type.application";
+		};
+		CF646A67155854299E754AFC /* PickleHubTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8AAD9E5CC32DEA9C4826A907 /* Build configuration list for PBXNativeTarget "PickleHubTests" */;
+			buildPhases = (
+				719FE1B3A885EFCA52B8843C /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F38DCB564FD823C15EC77629 /* PBXTargetDependency */,
+			);
+			name = PickleHubTests;
+			packageProductDependencies = (
+			);
+			productName = PickleHubTests;
+			productReference = 0508E32193CC671041AA1C7B /* PickleHubTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		458103AB52133CD6F07198B0 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1600;
+				TargetAttributes = {
+					72007752958D49B8B9E92DE3 = {
+						DevelopmentTeam = "";
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 3F2464E31D7DB1133E00A8F2 /* Build configuration list for PBXProject "PickleHub" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = B60CB12D2377D85A3C4CD2E5;
+			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				B079BE87BE7F2FA9CD1B986D /* XCRemoteSwiftPackageReference "supabase-swift" */,
+			);
+			preferredProjectObjectVersion = 77;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				72007752958D49B8B9E92DE3 /* PickleHub */,
+				CF646A67155854299E754AFC /* PickleHubTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		719FE1B3A885EFCA52B8843C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BA70D5EFE371509AC212AB6F /* Glicko2Tests.swift in Sources */,
+				DC59131013BCD0EB304FB766 /* PickleHubTests.swift in Sources */,
+				DCA831D23FB79333D93A0E8E /* PlayerSwapServiceTests.swift in Sources */,
+				300B8C7DF8C27479A164A9D8 /* ScheduleGeneratorTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AEF4F5A1A9C76A9A4118C32D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				10987AA929524DA968DCBA85 /* Activity.swift in Sources */,
+				68601D15AB414D2F7509A347 /* ActivityRepository.swift in Sources */,
+				4A9215A455CB855B398A44F4 /* AuthGateView.swift in Sources */,
+				2328E0CEB7370638766CF2EA /* AuthService.swift in Sources */,
+				425A85BACCFCC780536507F4 /* AvatarView.swift in Sources */,
+				B2074B2237E2C9133CD0F186 /* BadgeView.swift in Sources */,
+				768EEE09C81CFB6934833F06 /* Club.swift in Sources */,
+				033192C2F1D17E5A840278F7 /* ClubDiscoveryView.swift in Sources */,
+				F2A011577ABC7039604FDE7F /* ClubInvitation.swift in Sources */,
+				1F66D3439550C2A7A4DE3673 /* ClubMembership.swift in Sources */,
+				284DC9A2577DA897F62A3422 /* ClubSelectorView.swift in Sources */,
+				65773D46AECA000F6349064E /* ClubService.swift in Sources */,
+				27A1372273D655D099564BF9 /* Color+Extensions.swift in Sources */,
+				F9F480474899642D84B4E8CF /* ContentView.swift in Sources */,
+				ED08C2480696FAFC542FD23D /* CourtAssignment.swift in Sources */,
+				BF441DC63A866CFB1B043DBB /* CourtCardView.swift in Sources */,
+				697F049A7515CCA618CF0DE5 /* CourtDisplayTypes.swift in Sources */,
+				5133371E002AE2A2D7D0F4BA /* CourtDisplayView.swift in Sources */,
+				E6CDB795D966155639367D90 /* CreateClubView.swift in Sources */,
+				EF5A16541BECE01BF4E254F4 /* CreatePostSheet.swift in Sources */,
+				38C9F5722ADDAAA732FA71DB /* CreateSessionSheet.swift in Sources */,
+				AE7352E92343937E9C16EC79 /* DashboardView.swift in Sources */,
+				F7EAD34A0DA6E5CA6F220A4C /* Date+Extensions.swift in Sources */,
+				425F10CA5FBA007F28AC89B2 /* EditProfileSheet.swift in Sources */,
+				995FEFA630367A60B13ABD8A /* EditSessionSheet.swift in Sources */,
+				033CB92E57456198ED873A56 /* EmptyStateView.swift in Sources */,
+				B83BF1C10AEF14032BB63BE1 /* FeedItemView.swift in Sources */,
+				98289650B9E7303AF593FCE6 /* FeedView.swift in Sources */,
+				BA4B9931773B20FEC81521FF /* GameResult.swift in Sources */,
+				DE6C5130FA02FFF11A6C3E17 /* GameScoreInputView.swift in Sources */,
+				78F6D3D7400262D4A9D82032 /* GameScoreRepository.swift in Sources */,
+				837A15142E6942BF6C7750DE /* Glicko2.swift in Sources */,
+				EF3793577DA811D8C925BF72 /* InvitationRepository.swift in Sources */,
+				50012D9300772BC7AC2E7D3C /* InviteMemberSheet.swift in Sources */,
+				ACC19321641A6F0CC81DB826 /* LiquidGlassModifier.swift in Sources */,
+				D05B8AE3D58F05565D4E9C48 /* LoadingView.swift in Sources */,
+				CA9591992A09A78039228A2B /* MainTabView.swift in Sources */,
+				427A330C7727C5612A47F903 /* MemberCardView.swift in Sources */,
+				7FEA8A1657481B13D5BA7F44 /* MemberRepository.swift in Sources */,
+				344DDA0A975BC82640DF8189 /* MembersContainerView.swift in Sources */,
+				04EEFA6308E3AC59B48711C7 /* MembersView.swift in Sources */,
+				ADF8F71CF0C084F2A580125D /* NavigationRouter.swift in Sources */,
+				C69ECEC829E3306EF2A5CF92 /* OnboardingView.swift in Sources */,
+				D4B8A225C26F8ECBCC2DD16A /* PDFExportService.swift in Sources */,
+				7DA0C68456B652D93B2B1A16 /* Participant.swift in Sources */,
+				BB42A9AA7096DCE4C8F8621E /* PaymentRepository.swift in Sources */,
+				BE7D0D488767BCED3909F6BC /* PaymentStatus.swift in Sources */,
+				38015E6A8762A7A258DB597D /* PaymentsView.swift in Sources */,
+				68F03AC39E1C9F5537DD498B /* PickleHubApp.swift in Sources */,
+				18BC4F10A6B8A0B3E9B78B8A /* PlayerSwapService.swift in Sources */,
+				DB3787DEFFADCB9F1FFE837D /* ProfileView.swift in Sources */,
+				D34D178B3F078EA8F5781B34 /* RankingRowView.swift in Sources */,
+				6202CD05F4D9DB67DFB5616F /* RankingsView.swift in Sources */,
+				A456852EC3F559D59B5311C9 /* RegistrationRepository.swift in Sources */,
+				3E9BB18FEFDEDE66BD7A9F06 /* RestingPlayersView.swift in Sources */,
+				970F71AFE977E3D86DF724D1 /* Rotation.swift in Sources */,
+				591F30D0BC14251A2357B364 /* RotationRepository.swift in Sources */,
+				3F57EFC6DB990B0A7A3CDDED /* RotationRester.swift in Sources */,
+				0A5A7F44463979E38E767145 /* ScheduleGenerator.swift in Sources */,
+				B0947D8A13DF44C2662DBADC /* ScheduleGeneratorView.swift in Sources */,
+				C647E7760B7D9769E32A8C30 /* ScheduleTypes.swift in Sources */,
+				49F3C050B2B89413C5C7AA07 /* SearchBarView.swift in Sources */,
+				C879DDEEF89F3CC23D8E0A12 /* Session.swift in Sources */,
+				13D184E3ADD4DB92ED5643AC /* SessionDetailView.swift in Sources */,
+				B8A7C12673DEF681A645D219 /* SessionPDFExportButton.swift in Sources */,
+				E9B16E0CA01DDAEE96A1B87D /* SessionPDFView.swift in Sources */,
+				0F980ED6AE345A2AA2602D1F /* SessionRegistration.swift in Sources */,
+				39BDADA130B9BAD20414FE96 /* SessionRepository.swift in Sources */,
+				17C21CD3D0FB90F41C0ADC56 /* SessionStatusUpdater.swift in Sources */,
+				ECC713D827A18B84E380563B /* SessionsListView.swift in Sources */,
+				5F74574DFD8ACDA468B68AD0 /* SignInView.swift in Sources */,
+				9593B1249519461DE0FE0C02 /* SignUpStep1View.swift in Sources */,
+				18D3DB38DBF7D86F6CB1DEF3 /* SignUpStep2View.swift in Sources */,
+				C3694E6E3A05B44A7C40D6F7 /* SignUpView.swift in Sources */,
+				56F5C30BC38C05EFF23AA48D /* StatCardView.swift in Sources */,
+				83368676F379FFEAA6503C47 /* SupabaseClient.swift in Sources */,
+				8D667EA3076E56D6B35CA1D8 /* SupabaseConfig.swift in Sources */,
+				95FF3B29F3F8102AD68846BF /* TeamDisplayView.swift in Sources */,
+				E83C9C3747FA0B7DF01E25CE /* TemporaryParticipant.swift in Sources */,
+				C3CA187FE0386CAB84A6493A /* TemporaryParticipantRepository.swift in Sources */,
+				87986D66FF17F835389A9367 /* TemporaryParticipantSheet.swift in Sources */,
+				FFEA7B8B175347959C7BAE93 /* ToastManager.swift in Sources */,
+				36E0F7BC1D7C6621828C6974 /* ToastView.swift in Sources */,
+				0B75CFCD0F29880835A4051D /* UserProfile.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F38DCB564FD823C15EC77629 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 72007752958D49B8B9E92DE3 /* PickleHub */;
+			targetProxy = 9E3447006D18C202BAAE3CDC /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		1A5B9B8BF16EA7B855280EF8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = PickleHub/Resources/PickleHub.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = PickleHub/Resources/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.picklehub.app;
+				SDKROOT = iphoneos;
+				SUPPORTS_XR_DESIGNED_FOR = NO;
+				SWIFT_VERSION = 6.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		325DE6AA4A4940183D50A630 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.picklehub.PickleHubTests;
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 6.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PickleHub.app/PickleHub";
+			};
+			name = Debug;
+		};
+		3D20C03E5EB48B20B87D7A46 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = PickleHub/Resources/PickleHub.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = PickleHub/Resources/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.picklehub.app;
+				SDKROOT = iphoneos;
+				SUPPORTS_XR_DESIGNED_FOR = NO;
+				SWIFT_VERSION = 6.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		75E204C0EB5296784491046D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		CE63A325F559513E8E43A23F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		E99F1845EBB59A109FA072D6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.picklehub.PickleHubTests;
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 6.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PickleHub.app/PickleHub";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3F2464E31D7DB1133E00A8F2 /* Build configuration list for PBXProject "PickleHub" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CE63A325F559513E8E43A23F /* Debug */,
+				75E204C0EB5296784491046D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		8AAD9E5CC32DEA9C4826A907 /* Build configuration list for PBXNativeTarget "PickleHubTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				325DE6AA4A4940183D50A630 /* Debug */,
+				E99F1845EBB59A109FA072D6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		8D7D5BB89B736AFC0FAF8020 /* Build configuration list for PBXNativeTarget "PickleHub" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3D20C03E5EB48B20B87D7A46 /* Debug */,
+				1A5B9B8BF16EA7B855280EF8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		B079BE87BE7F2FA9CD1B986D /* XCRemoteSwiftPackageReference "supabase-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/supabase/supabase-swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		D3E70A4731C98BED722F69A9 /* Supabase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B079BE87BE7F2FA9CD1B986D /* XCRemoteSwiftPackageReference "supabase-swift" */;
+			productName = Supabase;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 458103AB52133CD6F07198B0 /* Project object */;
+}

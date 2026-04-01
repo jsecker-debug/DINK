@@ -22,14 +22,3 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
-
-# Environment
-.env
-.env.*
-
-# Xcode
-PickleHub-iOS/**/DerivedData/
-PickleHub-iOS/**/*.xcuserstate
-
-# Claude
-.claude/
