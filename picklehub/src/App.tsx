@@ -9,12 +9,10 @@ import Dashboard from "./pages/Dashboard";
 import Feed from "./pages/Feed";
 import Schedule from "./pages/Schedule";
 import SessionDetail from "./pages/SessionDetail";
-import Members from "./pages/Members";
-import Rankings from "./pages/Rankings";
-import Payments from "./pages/Payments";
+import Club from "./pages/Club";
+import MemberDetail from "./pages/MemberDetail";
 import SignUp from "./pages/SignUp";
 import SignIn from "./pages/SignIn";
-import Index from "./pages/Index";
 import Profile from './pages/Profile'
 import MarketingHome from './pages/MarketingHome'
 import { ProfileButton } from './components/ProfileButton'
@@ -123,11 +121,14 @@ const App = () => {
                   <Route path="/feed" element={<Feed />} />
                   <Route path="/schedule" element={<Schedule />} />
                   <Route path="/session/:sessionId" element={<SessionDetail />} />
-                  <Route path="/members" element={<Members />} />
-                  <Route path="/rankings" element={<Rankings />} />
-                  <Route path="/payments" element={<Payments />} />
-                  <Route path="/scheduler" element={<Index />} />
+                  <Route path="/club" element={<Club />} />
+                  <Route path="/member/:memberId" element={<MemberDetail />} />
                   <Route path="/profile" element={<Profile />} />
+                  {/* Redirects for old routes */}
+                  <Route path="/members" element={<Navigate to="/club" replace />} />
+                  <Route path="/rankings" element={<Navigate to="/club" replace />} />
+                  <Route path="/payments" element={<Navigate to="/club" replace />} />
+                  <Route path="/scheduler" element={<Navigate to="/schedule" replace />} />
                 </Route>
 
                 {/* Catch all */}

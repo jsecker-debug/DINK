@@ -88,13 +88,13 @@ struct DashboardView: View {
                         showCreateSessionSheet = true
                     }
                     QuickActionButton(icon: "person.badge.plus", label: "Manage Members") {
-                        router.switchTo(.members)
+                        router.switchTo(.club)
                     }
                     QuickActionButton(icon: "sportscourt.fill", label: "Generate Games") {
                         router.switchTo(.sessions)
                     }
                     QuickActionButton(icon: "trophy.fill", label: "View Rankings") {
-                        router.switchTo(.rankings)
+                        router.switchTo(.club)
                     }
                 }
             }

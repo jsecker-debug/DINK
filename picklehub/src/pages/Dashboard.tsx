@@ -120,7 +120,7 @@ const Dashboard = () => {
           </div>
           {hasOutstandingPayments && (
             <div className="mt-3">
-              <Link to="/payments">
+              <Link to="/club">
                 <Button size="sm" variant="destructive" className="w-full">
                   Pay Now
                 </Button>
@@ -140,25 +140,25 @@ const Dashboard = () => {
               Schedule Session
             </Button>
           </Link>
-          <Link to="/members">
+          <Link to="/club">
             <Button className="w-full h-12 justify-start" variant="outline">
               <Users className="mr-2 h-4 w-4" />
               Manage Members
             </Button>
           </Link>
-          <Link to="/scheduler">
+          <Link to="/schedule">
             <Button className="w-full h-12 justify-start" variant="outline">
               <Activity className="mr-2 h-4 w-4" />
               Generate Games
             </Button>
           </Link>
-          <Link to="/rankings">
+          <Link to="/club">
             <Button className="w-full h-12 justify-start" variant="outline">
               <Trophy className="mr-2 h-4 w-4" />
               View Rankings
             </Button>
           </Link>
-          <Link to="/payments">
+          <Link to="/club">
             <Button className="w-full h-12 justify-start" variant="outline">
               <DollarSign className="mr-2 h-4 w-4" />
               Manage Payments
@@ -247,7 +247,7 @@ const Dashboard = () => {
               Set up your pickleball club and start managing sessions, members, and rankings.
             </p>
             <div className="flex flex-wrap gap-3">
-              <Link to="/members">
+              <Link to="/club">
                 <Button>Add Your First Members</Button>
               </Link>
               <Link to="/schedule">

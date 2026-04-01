@@ -1,13 +1,13 @@
 import Foundation
 
-/// Maps to the `roation_resters` Supabase table (typo in original DB schema).
+/// Maps to the `rotation_resters` Supabase table.
 struct RotationRester: Identifiable, Codable, Equatable {
     let id: UUID
     let rotationId: UUID?
     let restingPlayers: [String]?
     let createdAt: Date?
 
-    // NOTE: The table name in Supabase is "roation_resters" (typo preserved).
+    // Maps to "rotation_resters" Supabase table.
     enum CodingKeys: String, CodingKey {
         case id
         case rotationId = "rotation_id"

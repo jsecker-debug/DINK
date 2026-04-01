@@ -6,8 +6,7 @@ import Observation
 enum AppTab: Int, Hashable, CaseIterable {
     case dashboard
     case sessions
-    case rankings
-    case members
+    case club
     case profile
 }
 

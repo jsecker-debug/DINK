@@ -22,7 +22,7 @@ export const updateRotationInDatabase = async (
     // Update resters
     updatePromises.push(
       supabase
-        .from('roation_resters')
+        .from('rotation_resters')
         .update({
           resting_players: targetRotation.resters
         })

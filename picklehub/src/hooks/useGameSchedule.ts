@@ -51,7 +51,7 @@ export const useGameSchedule = (selectedSession: string) => {
         // Insert resters if any
         if (rotation.resters.length > 0) {
           const { error: restersError } = await supabase
-            .from('roation_resters')
+            .from('rotation_resters')
             .insert({
               rotation_id: rotationData.id,
               resting_players: rotation.resters
@@ -92,7 +92,7 @@ export const useGameSchedule = (selectedSession: string) => {
         // Insert resters if any
         if (kingCourtRotation.resters.length > 0) {
           const { error: kingRestersError } = await supabase
-            .from('roation_resters')
+            .from('rotation_resters')
             .insert({
               rotation_id: kingRotationData.id,
               resting_players: kingCourtRotation.resters

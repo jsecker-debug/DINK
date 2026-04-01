@@ -33,18 +33,8 @@ struct MainTabView: View {
                 }
             }
 
-            Tab("Rankings", systemImage: "trophy.fill", value: .rankings) {
-                NavigationStack {
-                    RankingsView()
-                        .toolbar { clubToolbar }
-                }
-            }
-
-            Tab("Members", systemImage: "person.2.fill", value: .members) {
-                NavigationStack {
-                    MembersContainerView()
-                        .toolbar { clubToolbar }
-                }
+            Tab("Club", systemImage: "building.2.fill", value: .club) {
+                ClubContainerView()
             }
 
             Tab("Profile", systemImage: "person.crop.circle", value: .profile) {
@@ -80,23 +70,11 @@ struct MainTabView: View {
             }
             .tag(AppTab.sessions)
 
-            NavigationStack {
-                RankingsView()
-                    .toolbar { clubToolbar }
-            }
+            ClubContainerView()
             .tabItem {
-                Label("Rankings", systemImage: "trophy.fill")
+                Label("Club", systemImage: "building.2.fill")
             }
-            .tag(AppTab.rankings)
-
-            NavigationStack {
-                MembersContainerView()
-                    .toolbar { clubToolbar }
-            }
-            .tabItem {
-                Label("Members", systemImage: "person.2.fill")
-            }
-            .tag(AppTab.members)
+            .tag(AppTab.club)
 
             NavigationStack {
                 ProfileView()

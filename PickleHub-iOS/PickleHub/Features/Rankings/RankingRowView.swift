@@ -5,41 +5,68 @@ struct RankingRowView: View {
     let participant: ParticipantWithProfile
     let sortBy: RankingsView.SortOption
 
-    var body: some View {
-        HStack(spacing: 12) {
-            rankBadge
-                .frame(width: 32)
+    /// Converts the participant data into a `ClubMemberWithProfile` for navigation.
+    private var memberValue: ClubMemberWithProfile {
+        ClubMemberWithProfile(
+            id: participant.id,
+            userId: participant.id,
+            role: "member",
+            status: "active",
+            joinedAt: nil,
+            fullName: participant.name,
+            phone: participant.phone,
+            skillLevel: participant.skillLevel,
+            gender: participant.gender,
+            totalGamesPlayed: participant.totalGamesPlayed,
+            wins: participant.wins,
+            losses: participant.losses,
+            avatarUrl: participant.avatarUrl
+        )
+    }
 
-            // Avatar
-            Circle()
-                .fill(Color(.tertiarySystemBackground))
-                .frame(width: 40, height: 40)
-                .overlay {
-                    Text(initials)
+    var body: some View {
+        NavigationLink(value: memberValue) {
+            HStack(spacing: 12) {
+                rankBadge
+                    .frame(width: 32)
+
+                // Avatar
+                Circle()
+                    .fill(Color(.tertiarySystemBackground))
+                    .frame(width: 40, height: 40)
+                    .overlay {
+                        Text(initials)
+                            .font(.subheadline.bold())
+                            .foregroundStyle(.secondary)
+                    }
+
+                VStack(alignment: .leading, spacing: 2) {
+                    Text(participant.name)
                         .font(.subheadline.bold())
+                    Text("\(participant.totalGamesPlayed) games")
+                        .font(.caption)
                         .foregroundStyle(.secondary)
                 }
 
-            VStack(alignment: .leading, spacing: 2) {
-                Text(participant.name)
-                    .font(.subheadline.bold())
-                Text("\(participant.totalGamesPlayed) games")
-                    .font(.caption)
-                    .foregroundStyle(.secondary)
-            }
+                Spacer()
 
-            Spacer()
+                VStack(alignment: .trailing, spacing: 2) {
+                    Text(primaryStatValue)
+                        .font(.subheadline.bold())
+                    Text(primaryStatLabel)
+                        .font(.caption)
+                        .foregroundStyle(.secondary)
+                }
 
-            VStack(alignment: .trailing, spacing: 2) {
-                Text(primaryStatValue)
-                    .font(.subheadline.bold())
-                Text(primaryStatLabel)
+                Image(systemName: "chevron.right")
                     .font(.caption)
-                    .foregroundStyle(.secondary)
+                    .foregroundStyle(.tertiary)
             }
+            .padding(.horizontal, 16)
+            .padding(.vertical, 12)
+            .contentShape(Rectangle())
         }
-        .padding(.horizontal, 16)
-        .padding(.vertical, 12)
+        .buttonStyle(.plain)
         .accessibilityElement(children: .combine)
         .accessibilityLabel("Rank \(rank), \(participant.name), \(primaryStatLabel): \(primaryStatValue), \(participant.totalGamesPlayed) games")
     }

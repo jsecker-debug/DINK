@@ -2,18 +2,17 @@
 
 import React from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-import { 
-  LayoutDashboard, 
-  MessageSquare, 
-  Calendar, 
-  Users, 
-  Trophy,
-  CreditCard,
+import {
+  LayoutDashboard,
+  MessageSquare,
+  Calendar,
+  Users,
   LogIn,
   UserPlus,
   Menu,
   X,
-  Home
+  Home,
+  User
 } from "lucide-react";
 import { useState } from "react";
 import {
@@ -43,24 +42,19 @@ const authenticatedNavigationItems = [
     path: "/feed",
   },
   {
-    title: "Schedule",
+    title: "Sessions",
     icon: Calendar,
     path: "/schedule",
   },
   {
-    title: "Members",
+    title: "Club",
     icon: Users,
-    path: "/members",
+    path: "/club",
   },
   {
-    title: "Rankings",
-    icon: Trophy,
-    path: "/rankings",
-  },
-  {
-    title: "Payments",
-    icon: CreditCard,
-    path: "/payments",
+    title: "Profile",
+    icon: User,
+    path: "/profile",
   },
 ];
 

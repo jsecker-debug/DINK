@@ -105,7 +105,7 @@ PickleHub/
 ### Agent 2A: Data Models
 All Swift structs conforming to `Codable` with `CodingKeys` for snake_case mapping. One file per entity: Session, UserProfile, Club, ClubMembership, ClubInvitation, SessionRegistration, Rotation, CourtAssignment, GameResult, TemporaryParticipant, PaymentStatus, Activity, Participant.
 
-Note: The Supabase table `roation_resters` (typo in original DB) must be mapped correctly in CodingKeys.
+Note: The Supabase table `rotation_resters` (typo in original DB) must be mapped correctly in CodingKeys.
 
 **Source:** `src/integrations/supabase/types.ts`, `src/types/scheduler.ts`, `src/types/court-display.ts`
 
@@ -139,7 +139,7 @@ Note: The Supabase table `roation_resters` (typo in original DB) must be mapped 
 - `PickleHub/Models/Participant.swift` — Participant model
 - `PickleHub/Models/PaymentStatus.swift` — Payment tracking model
 - `PickleHub/Models/Rotation.swift` — Rotation DB model
-- `PickleHub/Models/RotationRester.swift` — Maps to `roation_resters` table (DB typo preserved)
+- `PickleHub/Models/RotationRester.swift` — Maps to `rotation_resters` table (DB typo preserved)
 - `PickleHub/Models/ScheduleTypes.swift` — Court, ScheduleRotation, RotationSettings
 - `PickleHub/Models/Session.swift` — Renamed to `ClubSession` to avoid conflict with Supabase Auth.Session
 - `PickleHub/Models/SessionRegistration.swift` — Session registration model
@@ -191,14 +191,14 @@ Note: The Supabase table `roation_resters` (typo in original DB) must be mapped 
 - `PickleHub/Repositories/SessionRepository.swift` — CRUD for sessions (fetch, create, update, delete)
 - `PickleHub/Repositories/RegistrationRepository.swift` — register/unregister with waitlist auto-promote, SessionRegistrationWithUser join struct, RegistrationError enum
 - `PickleHub/Repositories/TemporaryParticipantRepository.swift` — CRUD for temporary/guest participants
-- `PickleHub/Repositories/RotationRepository.swift` — save/load/update/delete schedules with nested court_assignments and roation_resters joins, SessionScheduleData struct
+- `PickleHub/Repositories/RotationRepository.swift` — save/load/update/delete schedules with nested court_assignments and rotation_resters joins, SessionScheduleData struct
 - `PickleHub/Repositories/GameScoreRepository.swift` — save/load scores, update_game_ratings and update_session_ratings RPC calls, GameScore struct
 - `PickleHub/Repositories/MemberRepository.swift` — two-step club member + profile queries, ClubMemberWithProfile and ParticipantWithProfile structs
 - `PickleHub/Repositories/PaymentRepository.swift` — session fee tracking with upsert, RegistrationWithProfile and PaymentStatusRecord structs
 - `PickleHub/Repositories/ActivityRepository.swift` — activity feed with related actor/target data fetched in parallel, ActivityWithRelatedData struct, RecentMember struct
 - `PickleHub/Repositories/InvitationRepository.swift` — CRUD for club invitations with token generation and lookup
 
-**Completion summary:** All 9 repository files created across 3 parallel agents. Each repository provides async/await Supabase data access matching the web app's React Query hooks. Key features ported: waitlist auto-promotion on unregister, schedule cascade save/delete with roation_resters typo preserved, game score save with RPC rating updates, two-step member+profile queries, payment upsert, activity feed with parallel related data fetching, invitation token management.
+**Completion summary:** All 9 repository files created across 3 parallel agents. Each repository provides async/await Supabase data access matching the web app's React Query hooks. Key features ported: waitlist auto-promotion on unregister, schedule cascade save/delete with rotation_resters typo preserved, game score save with RPC rating updates, two-step member+profile queries, payment upsert, activity feed with parallel related data fetching, invitation token management.
 
 **Manual changes required:** None — XcodeGen regenerated the project and all files compile cleanly.
 
@@ -469,7 +469,7 @@ Note: The Supabase table `roation_resters` (typo in original DB) must be mapped 
 1. **Player swap UX** — Web drag-drop doesn't translate directly. Use tap-to-select-then-tap-to-swap as primary, drag as enhancement.
 2. **Supabase Swift SDK syntax** — Query builder differs from JS SDK. String-based joins like `.select("*, user_profiles(*)")`. Test early.
 3. **RPC calls** — `update_game_ratings` and `update_session_ratings` functions called via `.rpc()` need Swift SDK verification.
-4. **Table typo** — `roation_resters` must be referenced by exact name in queries, mapped to correct Swift naming internally.
+4. **Table typo** — `rotation_resters` must be referenced by exact name in queries, mapped to correct Swift naming internally.
 5. **Avatar cropping** — Replace `react-image-crop` with native `PhotosPicker` + circular mask.
 
 ## Verification

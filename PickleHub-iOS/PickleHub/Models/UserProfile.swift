@@ -9,6 +9,9 @@ struct UserProfile: Identifiable, Codable, Hashable {
     let skillLevel: Double?
     let gender: String?
     let avatarUrl: String?
+    let totalGamesPlayed: Int?
+    let wins: Int?
+    let losses: Int?
     let createdAt: Date?
     let updatedAt: Date?
 
@@ -21,6 +24,9 @@ struct UserProfile: Identifiable, Codable, Hashable {
         case skillLevel = "skill_level"
         case gender
         case avatarUrl = "avatar_url"
+        case totalGamesPlayed = "total_games_played"
+        case wins
+        case losses
         case createdAt = "created_at"
         case updatedAt = "updated_at"
     }

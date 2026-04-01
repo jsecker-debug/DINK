@@ -18,7 +18,7 @@ struct RotationRepository {
     func fetchSessionSchedule(sessionId: Int) async throws -> SessionScheduleData? {
         let response: [RotationResponse] = try await supabase
             .from("rotations")
-            .select("id, is_king_court, rotation_number, court_assignments(court_number, team1_players, team2_players), roation_resters(resting_players)")
+            .select("id, is_king_court, rotation_number, court_assignments(court_number, team1_players, team2_players), rotation_resters(resting_players)")
             .eq("session_id", value: sessionId)
             .order("rotation_number", ascending: true)
             .execute()
@@ -39,7 +39,7 @@ struct RotationRepository {
                     )
                 }
 
-            let resters = item.roationResters.flatMap { $0.restingPlayers ?? [] }
+            let resters = item.rotationResters.flatMap { $0.restingPlayers ?? [] }
 
             let scheduleRotation = ScheduleRotation(
                 id: item.id,
@@ -106,7 +106,7 @@ struct RotationRepository {
                     restingPlayers: rotation.resters
                 )
                 try await supabase
-                    .from("roation_resters")
+                    .from("rotation_resters")
                     .insert(resterPayload)
                     .execute()
             }
@@ -137,9 +137,9 @@ struct RotationRepository {
             .in("rotation_id", values: rotationIdStrings)
             .execute()
 
-        // Delete roation_resters by rotation_id (DB typo)
+        // Delete rotation_resters by rotation_id
         try await supabase
-            .from("roation_resters")
+            .from("rotation_resters")
             .delete()
             .in("rotation_id", values: rotationIdStrings)
             .execute()
@@ -173,7 +173,7 @@ struct RotationRepository {
 
         // Update resters: delete existing and re-insert
         try await supabase
-            .from("roation_resters")
+            .from("rotation_resters")
             .delete()
             .eq("rotation_id", value: rotationId.uuidString)
             .execute()
@@ -184,7 +184,7 @@ struct RotationRepository {
                 restingPlayers: rotation.resters
             )
             try await supabase
-                .from("roation_resters")
+                .from("rotation_resters")
                 .insert(resterPayload)
                 .execute()
         }
@@ -204,14 +204,14 @@ struct RotationRepository {
         let isKingCourt: Bool?
         let rotationNumber: Int?
         let courtAssignments: [CourtAssignmentResponse]
-        let roationResters: [ResterResponse]
+        let rotationResters: [ResterResponse]
 
         enum CodingKeys: String, CodingKey {
             case id
             case isKingCourt = "is_king_court"
             case rotationNumber = "rotation_number"
             case courtAssignments = "court_assignments"
-            case roationResters = "roation_resters"
+            case rotationResters = "rotation_resters"
         }
     }
 

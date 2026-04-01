@@ -3,7 +3,6 @@ import PhotosUI
 
 struct ProfileView: View {
     @Environment(AuthService.self) private var authService
-    @Environment(ClubService.self) private var clubService
 
     @State private var showEditSheet = false
     @State private var showSignOutConfirm = false
@@ -95,15 +94,21 @@ struct ProfileView: View {
     // MARK: - Stats Grid
 
     private var statsGrid: some View {
-        LiquidGlassContainer(spacing: 12) {
+        let profile = authService.userProfile
+        let gamesPlayed = profile?.totalGamesPlayed ?? 0
+        let wins = profile?.wins ?? 0
+        let losses = profile?.losses ?? 0
+        let winRate = gamesPlayed > 0 ? Double(wins) / Double(gamesPlayed) * 100 : 0
+
+        return LiquidGlassContainer(spacing: 12) {
             LazyVGrid(columns: [
                 GridItem(.flexible(), spacing: 12),
                 GridItem(.flexible(), spacing: 12)
             ], spacing: 12) {
-                StatCardView(title: "Games Played", value: "-", subtitle: "Coming soon", icon: "trophy", iconColor: .blue)
-                StatCardView(title: "Win Rate", value: "-%", subtitle: "Coming soon", icon: "target", iconColor: .purple)
-                StatCardView(title: "Total Wins", value: "-", subtitle: "Coming soon", icon: "arrow.up.right", iconColor: .green)
-                StatCardView(title: "Total Losses", value: "-", subtitle: "Coming soon", icon: "arrow.down.right", iconColor: .red)
+                StatCardView(title: "Games Played", value: "\(gamesPlayed)", subtitle: "Total", icon: "trophy", iconColor: .blue)
+                StatCardView(title: "Win Rate", value: String(format: "%.0f%%", winRate), subtitle: gamesPlayed > 0 ? "Of \(gamesPlayed) games" : "No games yet", icon: "target", iconColor: .purple)
+                StatCardView(title: "Total Wins", value: "\(wins)", subtitle: gamesPlayed > 0 ? "Keep it up!" : "No games yet", icon: "arrow.up.right", iconColor: .green)
+                StatCardView(title: "Total Losses", value: "\(losses)", subtitle: gamesPlayed > 0 ? "Room to grow" : "No games yet", icon: "arrow.down.right", iconColor: .red)
             }
         }
     }
@@ -158,34 +163,6 @@ struct ProfileView: View {
             .padding(16)
 
             Divider().padding(.leading, 16)
-
-            if clubService.isAdmin {
-                NavigationLink {
-                    PaymentsView()
-                } label: {
-                    HStack(spacing: 12) {
-                        Image(systemName: "dollarsign.circle")
-                            .foregroundStyle(.secondary)
-                            .frame(width: 24)
-                        VStack(alignment: .leading, spacing: 2) {
-                            Text("Payments")
-                                .font(.body)
-                            Text("Manage session payments")
-                                .font(.caption)
-                                .foregroundStyle(.secondary)
-                        }
-                        Spacer()
-                        Image(systemName: "chevron.right")
-                            .font(.caption)
-                            .foregroundStyle(.tertiary)
-                    }
-                    .padding(.horizontal, 16)
-                    .padding(.vertical, 12)
-                }
-                .buttonStyle(.plain)
-
-                Divider().padding(.leading, 16)
-            }
 
             settingsRow(icon: "key", title: "Change Password", subtitle: "Update your account password") {
                 Task {
